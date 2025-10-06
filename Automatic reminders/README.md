@@ -31,6 +31,11 @@ The flow runs daily at **9:00 AM**, checks which items are approaching expiry, a
   
   *Ensures the workflow runs every morning at 9 AM.*
 
+### 2. **Get items**
+- **Site Address**: *Your SharePoint site*
+- **List Name**: *Your SharePoint list*
+- **Filter Query:** `field_4 ne null`
+
 ### 2. **Apply to Each**
 - **Input:** `body/value` from the SharePoint “Get items” action (not shown here but assumed to be before this step).  
 
