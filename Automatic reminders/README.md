@@ -31,24 +31,24 @@ The flow runs daily at **9:00 AM**, checks which items are approaching expiry, a
   
   *Ensures the workflow runs every morning at 9 AM.*
 
-### 2. **Get items**
+### 2. **Get items (SharePoint)**
 - **Site Address**: *Your SharePoint site*
 - **List Name**: *Your SharePoint list*
 - **Filter Query:** `field_4 ne null`
 
-### 2. **Apply to Each**
+### 3. **Apply to Each**
 - **Input:** `body/value` from the SharePoint “Get items” action (not shown here but assumed to be before this step).  
 
 *Iterates through every item in the SharePoint list.*
 
-### 3. **Compose – Extract Fields**
+### 4. **Compose – Extract Fields**
 Extracts relevant SharePoint columns for easier reference in later steps:
 - **Due date:** `field_4`  
 - **Representative:** `Representative` (Person column)  
 - **CC (optional):** `Cc Email`  
 - **Reminder days:** `DaysbeforeFirstReminder`, `DaysbeforeSecondReminder`
 
-### 4. **Compose – Calculate Reminder Date (1)**
+### 5. **Compose – Calculate Reminder Date (1)**
 - **Action name:** `Calculate Reminder Date`  
 - **Expression:**
   ```text
@@ -63,7 +63,7 @@ Extracts relevant SharePoint columns for easier reference in later steps:
 
 *Calculates the date when the first reminder should be sent.*
 
-### 5. **Compose – Calculate Reminder Date (2)**
+### 6. **Compose – Calculate Reminder Date (2)**
 - **Action name:** `Calculate Reminder Date 2`  
 - **Expression:**
   ```text
@@ -78,7 +78,7 @@ Extracts relevant SharePoint columns for easier reference in later steps:
   ```
 *Calculates the date when the second reminder should be sent.*
 
-### 6. **Condition – Check Reminder Dates**
+### 7. **Condition – Check Reminder Dates**
 Evaluates if today matches either of the reminder dates:
   ```text
   Outputs('Calculate_Reminder_Date') is equal to utcNow('yyyy-MM-dd')
@@ -88,7 +88,7 @@ Evaluates if today matches either of the reminder dates:
 - If FALSE: No action (skip to next item).
 - If TRUE: Proceed to send the reminder email.
 
-### 7. **Send Email (V2) – Outlook**
+### 8. **Send Email (V2) – Outlook**
 When the condition is met, the flow sends a customized email:
 | Field        | Value                                                                                             |
 | ------------ | ------------------------------------------------------------------------------------------------- |
