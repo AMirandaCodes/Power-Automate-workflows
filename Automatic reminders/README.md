@@ -19,7 +19,9 @@ The flow runs daily at **9:00 AM**, checks which items are approaching expiry, a
 - Email subject and body dynamically include item title and due date.  
 
 ## Flow Structure
-<img width="506" height="854" alt="flow-diagram-reminders" src="https://github.com/user-attachments/assets/80d191b3-4051-451b-bd17-3c30b2bf2068" />
+<p align="center">
+  <img width="506" height="854" alt="flow-diagram-reminders" src="https://github.com/user-attachments/assets/80d191b3-4051-451b-bd17-3c30b2bf2068" />
+</p>
 
 ### 1. **Recurrence**
 - **Trigger:** `Recurrence`
