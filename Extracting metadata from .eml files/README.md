@@ -97,7 +97,7 @@ Checks if the sender value includes an email address in angle brackets:
 outputs('FromClean') contains '<'
 ```
 
-If TRUE:
+**If TRUE**:
 - Compose – Extract Name (Angle Brackets)
 ```text
 trim(first(split(outputs('FromClean'), '<')))
@@ -105,7 +105,7 @@ trim(first(split(outputs('FromClean'), '<')))
 - Set variable – vSenderName
   - Value: extracted name
 
-If FALSE:
+**If FALSE**:
 - Set variable – vSenderName
   - Value: `outputs('FromClean')`
  
