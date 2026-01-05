@@ -19,7 +19,9 @@ This ensures that uploaded email files are **searchable, filterable, and consist
 ---
 
 ## Flow Structure
-<img width="522" height="860" alt="Flow Extraction metadata From eml files" src="https://github.com/user-attachments/assets/36bc69a5-d147-4735-a42c-90246b1ca228" />
+<p align="center">
+  <img width="522" height="860" alt="Flow Extraction metadata From eml files" src="https://github.com/user-attachments/assets/36bc69a5-d147-4735-a42c-90246b1ca228" />
+</p>
 
 ### 1. **When a file is created (properties only)**
 - **Trigger:** SharePoint
